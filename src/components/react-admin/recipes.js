@@ -1,3 +1,4 @@
+// in src/components/react-admin/recipes.js
 import {
     List,
     SimpleList,
@@ -5,31 +6,32 @@ import {
     TextField,
     ReferenceField,
     TextInput,
-    ImageField
+    ImageField,
+    SelectField
   } from 'react-admin';
 
 import { useRecordContext} from 'react-admin';
 import { useMediaQuery } from '@mui/material';
 
-const mealFilters = [
+const recipeFilters = [
     <TextInput source="q" label="Search" alwaysOn />
 ];
 
-export const MealList = () => {
+export const RecipeList = () => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
-    <List filters={mealFilters} >
+    <List filters={recipeFilters} >
       {isSmall ? (
         <SimpleList
-          primaryText={(record) => record.title}
-          secondaryText={(record) => record.title}
-          tertiaryText={(record) => record.title}
+          primaryText={(record) => record.hits}
+          secondaryText={(record) => record.hits}
+          tertiaryText={(record) => record.hits}
           linkType={(record) => 'show'}
         >
         </SimpleList>
       ) : (
         <Datagrid bulkActionButtons={false} >
-          <TextField source="title" />
+          <TextField source="label" />
           <ImageField source="image" />
         </Datagrid>
       )}

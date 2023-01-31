@@ -6,7 +6,7 @@ import jsonapiClient from 'ra-jsonapi-client';
 
 import { UserList } from 'components/react-admin/users';
 import { CustomerList, CustomerEdit, CustomerCreate } from 'components/react-admin/customers';
-import { MealList } from 'components/react-admin/meals';
+import { RecipeList } from 'components/react-admin/recipes';
 
 //TODO eliminar las dos líneas siguientes
 import { PostList, PostEdit, PostCreate } from 'components/react-admin/posts';
@@ -17,6 +17,7 @@ import PostIcon from '@mui/icons-material/Book';
 import MealIcon from '@mui/icons-material/Palette';
 import UserIcon from '@mui/icons-material/Group';
 import MigrationIcon from '@mui/icons-material/Storage';
+import RecipeIcon from '@mui/icons-material/Palette';
 
 import { AdminLayout } from 'components/react-admin/adminLayout';
 
@@ -34,7 +35,9 @@ const RAdmin = () => (
   >
    <Resource name="customers"
     list={CustomerList} icon={CustomerIcon} edit={CustomerEdit} create={CustomerCreate} />
-   <Resource name="meals" list={MealList} icon={MealIcon} />
+
+   <Resource name="recipes" list={RecipeList} icon={RecipeIcon} />
+
    <Resource name="migrations"
       list={MigrationList} icon={MigrationIcon} edit={MigrationEdit} create={MigrationCreate}/>
     <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
