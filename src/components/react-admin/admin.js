@@ -14,7 +14,6 @@ import { MigrationList, MigrationEdit, MigrationCreate } from 'components/react-
 
 import CustomerIcon from '@mui/icons-material/SupportAgent';
 import PostIcon from '@mui/icons-material/Book';
-import MealIcon from '@mui/icons-material/Palette';
 import UserIcon from '@mui/icons-material/Group';
 import MigrationIcon from '@mui/icons-material/Storage';
 import RecipeIcon from '@mui/icons-material/Palette';
