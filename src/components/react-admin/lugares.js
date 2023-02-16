@@ -4,10 +4,12 @@ import {
     SimpleList,
     Datagrid,
     TextField,
-    ReferenceField,
+    Edit,
+    EditButton,
+    Create,
     TextInput,
     ImageField,
-    SelectField
+    SimpleForm
   } from 'react-admin';
 
 import { useRecordContext} from 'react-admin';
@@ -23,19 +25,22 @@ export const LugarList = () => {
     <List filters={lugarFilters} >
       {isSmall ? (
         <SimpleList
-          primaryText={(record) => record.hits}
-          secondaryText={(record) => record.hits}
-          tertiaryText={(record) => record.hits}
+          primaryText={(record) => record.name}
+          secondaryText={(record) => record.tipo}
+          tertiaryText={(record) => record.imagen}
           linkType={(record) => 'show'}
         >
+          <EditButton />
         </SimpleList>
       ) : (
         <Datagrid bulkActionButtons={false} >
+         
           <TextField source="name" />
           <TextField source="tipo" />
           <TextField source="ubicacion" />
           <TextField source="descripcion" />
           <ImageField source="imagen" />
+          <EditButton />
         </Datagrid>
       )}
     </List>
@@ -45,17 +50,15 @@ const LugarTitle = () => {
   const record = useRecordContext();
   return <span>Lugar {record ? `"${record.name} ${record.tipo}"` : ''}</span>;
 };
-//SEGUIR POR AQUI EDITANDO NO TERMINADO
 
 export const LugarEdit = () => (
     <Edit title={<LugarTitle />}>
     <SimpleForm>
         <TextInput source="id" disabled />
-        <TextInput source="first_name" />
-        <TextInput source="last_name" />
-        <TextInput source="job_title" />
-        <TextInput source="city" />
-        <TextInput source="country" />
+        <TextInput source="name" />
+        <TextInput source="ubicacion" />
+        <TextInput source="descripcion" />
+        <ImageField source="imagen" />
     </SimpleForm>
     </Edit>
 );
@@ -63,11 +66,10 @@ export const LugarEdit = () => (
 export const LugarCreate = () => (
     <Create>
         <SimpleForm>
-          <TextInput source="first_name" />
-          <TextInput source="last_name" />
-          <TextInput source="job_title" />
-          <TextInput source="city" />
-          <TextInput source="country" />
+        <TextInput source="name" />
+        <TextInput source="ubicacion" />
+        <TextInput source="descripcion" />
+        <ImageField source="imagen" />
         </SimpleForm>
     </Create>
     );
