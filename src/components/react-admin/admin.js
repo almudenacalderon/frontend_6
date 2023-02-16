@@ -9,6 +9,7 @@ import { useState } from 'react';
 
 import { UserList } from 'components/react-admin/users';
 import { CustomerList, CustomerEdit, CustomerCreate } from 'components/react-admin/customers';
+import { LugarList , LugarCreate, LugarEdit} from 'components/react-admin/lugares';
 import { RecipeList } from 'components/react-admin/recipes';
 
 //TODO eliminar las dos líneas siguientes
@@ -19,6 +20,7 @@ import CustomerIcon from '@mui/icons-material/SupportAgent';
 import PostIcon from '@mui/icons-material/Book';
 import UserIcon from '@mui/icons-material/Group';
 import MigrationIcon from '@mui/icons-material/Storage';
+import LugarIcon from '@mui/icons-material/Place';
 import RecipeIcon from '@mui/icons-material/Palette';
 
 import { AdminLayout } from 'components/react-admin/adminLayout';
@@ -50,9 +52,8 @@ const RAdmin = () => {
   >
    <Resource name="customers"
     list={CustomerList} icon={CustomerIcon} edit={CustomerEdit} create={CustomerCreate} />
-
+   <Resource name="lugares" list={LugarList} icon={LugarIcon} edit={LugarEdit} create={LugarCreate}/>
    <Resource name="recipes" list={RecipeList} icon={RecipeIcon} />
-
    <Resource name="migrations"
       list={MigrationList} icon={MigrationIcon} edit={MigrationEdit} create={MigrationCreate}/>
     <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
