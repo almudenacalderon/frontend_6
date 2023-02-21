@@ -9,17 +9,19 @@ import { useState } from 'react';
 
 import { UserList } from 'components/react-admin/users';
 import { CustomerList, CustomerEdit, CustomerCreate } from 'components/react-admin/customers';
+import { RutinaList, RutinaEdit, RutinaCreate } from 'components/react-admin/rutinas';
+import { EjercicioList, EjercicioEdit, EjercicioCreate } from 'components/react-admin/ejercicios';
+import { LugarList, LugarEdit, LugarCreate } from 'components/react-admin/lugares';
+import { EntrenadorList, EntrenadorEdit, EntrenadorCreate } from 'components/react-admin/entrenadores';
 import { RecipeList } from 'components/react-admin/recipes';
 
-//TODO eliminar las dos líneas siguientes
-import { PostList, PostEdit, PostCreate } from 'components/react-admin/posts';
-import { MigrationList, MigrationEdit, MigrationCreate } from 'components/react-admin/migrations';
-
 import CustomerIcon from '@mui/icons-material/SupportAgent';
-import PostIcon from '@mui/icons-material/Book';
+import RutinaIcon from '@mui/icons-material/PunchClock'
 import UserIcon from '@mui/icons-material/Group';
-import MigrationIcon from '@mui/icons-material/Storage';
 import RecipeIcon from '@mui/icons-material/Palette';
+import EjercicioIcon from '@mui/icons-material/FitnessCenter';
+import LugarIcon from '@mui/icons-material/Place';
+import EntrenadorIcon from '@mui/icons-material/Person';
 
 import { AdminLayout } from 'components/react-admin/adminLayout';
 
@@ -51,11 +53,20 @@ const RAdmin = () => {
    <Resource name="customers"
     list={CustomerList} icon={CustomerIcon} edit={CustomerEdit} create={CustomerCreate} />
 
+    <Resource name="rutinas"
+    list={RutinaList} icon={RutinaIcon} edit={RutinaEdit} create={RutinaCreate} />
+
+    <Resource name="ejercicios"
+    list={EjercicioList} icon={EjercicioIcon} edit={EjercicioEdit} create={EjercicioCreate} />
+
+    <Resource name="lugares"
+    list={LugarList} icon={LugarIcon} edit={LugarEdit} create={LugarCreate} />
+
+    <Resource name="entrenadores"
+    list={EntrenadorList} icon={EntrenadorIcon} edit={EntrenadorEdit} create={EntrenadorCreate} />
+
    <Resource name="recipes" list={RecipeList} icon={RecipeIcon} />
 
-   <Resource name="migrations"
-      list={MigrationList} icon={MigrationIcon} edit={MigrationEdit} create={MigrationCreate}/>
-    <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
     <Resource name="users" list={UserList} icon={UserIcon} recordRepresentation="name" />
   </Admin>
   )
