@@ -1,6 +1,6 @@
 // in src/components/react-admin/users.tsx
 import { useMediaQuery } from '@mui/material';
-import { List, SimpleList, Datagrid, TextField, EmailField, TextInput } from 'react-admin';
+import { List, SimpleList, Datagrid, TextField, EmailField, TextInput, ReferenceField } from 'react-admin';
 
 const userFilters = [
   <TextInput source="q" label="Search" alwaysOn />
@@ -19,6 +19,7 @@ export const UserList = () => {
       ) : (
         <Datagrid rowClick="edit">
           <TextField source="id" />
+          <ReferenceField source="entrenador" reference="entrenadores"/>
           <TextField source="name" />
           <TextField source="username" />
           <EmailField source="email" />
