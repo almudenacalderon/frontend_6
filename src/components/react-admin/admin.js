@@ -18,7 +18,7 @@ import { RecipeList } from 'components/react-admin/recipes';
 import CustomerIcon from '@mui/icons-material/SupportAgent';
 import RutinaIcon from '@mui/icons-material/PunchClock'
 import UserIcon from '@mui/icons-material/Group';
-import RecipeIcon from '@mui/icons-material/Palette';
+import RecipeIcon from '@mui/icons-material/LocalDining'; 
 import EjercicioIcon from '@mui/icons-material/FitnessCenter';
 import LugarIcon from '@mui/icons-material/Place';
 import EntrenadorIcon from '@mui/icons-material/Person';
