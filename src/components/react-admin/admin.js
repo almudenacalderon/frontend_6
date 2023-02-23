@@ -41,9 +41,9 @@ const RAdmin = () => {
   const [dataProvider, setDataProvider] = useState(null)
 
   if (!dataProvider) {
-    handleDataProvider(jsonapiClient(API_URL))
+   // handleDataProvider(jsonapiClient(API_URL))
     let auth = JSON.parse(localStorage.getItem('auth'))
-        let settings = {}
+    let settings = {}
         if(auth) {
           settings = {
             headers : {
@@ -53,7 +53,7 @@ const RAdmin = () => {
           }
         }
         handleDataProvider(jsonapiClient(API_URL, settings))
-       }
+    }
           
   return (
   <Admin
