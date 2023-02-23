@@ -1,16 +1,13 @@
 // CSS:
-//import './about.css';
-//import logo from 'images/logo.png';
+
 const Footer = () => (
     
-	<footer class="footer mt-auto py-3 activo">
-		<div class="container">
-			<p class="text-center text-white lead">Copyright &copy;
-				<script type="text/javascript">
-					document.write(new Date().getFullYear());
-				</script> FitChallenge.
-			</p>
-		</div>
-	</footer>
+	<footer className="footer mt-auto py-3 activo">
+  <div className="container">
+    <p className="text-center text-white lead">Copyright ©
+      FitChallenge.
+    </p>
+  </div>
+</footer>
 );
 export default Footer;
