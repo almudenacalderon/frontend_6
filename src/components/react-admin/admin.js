@@ -42,7 +42,19 @@ const RAdmin = () => {
 
   if (!dataProvider) {
     handleDataProvider(jsonapiClient(API_URL))
-  }
+    let auth = JSON.parse(localStorage.getItem('auth'))
+        let settings = {}
+        if(auth) {
+          settings = {
+            headers : {
+              Authorization: `${auth.token_type} ${auth.access_token}`,
+              'X-Requested-With': 'XMLHttpRequest'
+            }
+          }
+        }
+        handleDataProvider(jsonapiClient(API_URL, settings))
+       }
+          
   return (
   <Admin
     basename="/dashboard"
