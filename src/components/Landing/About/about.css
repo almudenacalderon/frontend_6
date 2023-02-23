@@ -1,0 +1,27 @@
+/* Seccion About */
+.about {
+    margin: 4em 0;
+    position: relative;
+  }
+  .about h1 {
+    color: #32cad7;
+    margin: 2em;
+    font-weight: bold;
+  }
+  .about span {
+    display: block;
+    color: #000;
+    position: absolute;
+    left: 115px;
+  }
+  .about .desc {
+    padding: 2em;
+    border-left: 4px solid #32cad7;
+  }
+  .about .desc h3 {
+    color: #32cad7;
+  }
+  .about .desc p {
+    line-height: 2;
+    color: #000;
+  }
